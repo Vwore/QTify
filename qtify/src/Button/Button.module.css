@@ -1,7 +1,7 @@
 .button{
     font-family: poppins !important;
     cursor: pointer !important;
-    border-radius: px !important;
+    border-radius: 5 px !important;
     color: var(--color-primary) !important;
     background-color: var(--color-black) !important;
 

@@ -1,0 +1,11 @@
+.section{
+    background-color: black;
+    padding: 10px;
+}
+
+.sectionHeading{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding: 7px;
+}

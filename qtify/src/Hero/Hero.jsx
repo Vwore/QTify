@@ -15,6 +15,7 @@ function Hero() {
           alt="headphones"
         />
       </div>
+
     </div>
   );
 }
