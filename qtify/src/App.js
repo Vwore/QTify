@@ -14,6 +14,7 @@ const url = {
 function App() {
   const [topAlbum, setTopAlbum] = useState([]);
   const [newAlbum, setNewAlbum] = useState([]);
+  const [songs,setSongs] = useState([]);
   async function fetchAlbum(album) {
     try {
       const res = await axios.get(url[album]);
@@ -27,9 +28,20 @@ function App() {
       console.log(e.response);
     }
   }
+  async function fetchSong() {
+    try{
+      const songResponse = await axios.get('https://qtify-backend-labs.crio.do/songs');
+      setSongs(songResponse.data);
+    }
+    catch(e)
+    {
+      console.log(e.response);
+    }
+  }
   useEffect(() => {
     fetchAlbum("top");
     fetchAlbum("new");
+    fetchSong();
   }, []);
   console.log("app.js");
   return (
@@ -38,6 +50,7 @@ function App() {
       <Hero />
       <Section album={topAlbum} label={'Top'} />
       <Section album={newAlbum} label={'New'}/>
+      <Section album={songs} label={''} isSong={true}/>
 
     </BrowserRouter>
   );
